@@ -1,0 +1,51 @@
+
+
+
+
+let nr = 6;
+
+
+let color1 = Color.random();
+let color2 = Color.random();
+let color3 = Color.random();
+let color4 = Color.random();
+let color5 = Color.random();
+let colorDist = (color2 - color1)/ (2*nr-1);
+let colorGradient = [];
+for(let i = 0; i<2*nr-1;i++){
+    colorGradient.push(color1 + colorDist*i);
+}
+
+
+
+
+
+for(let x = 0; x<nr; x++){
+    for(let y = 0; y<nr; y++){
+        for(let i = 0; i < nr; i++ ){
+            let rect = Path.Rectangle(new Point(x*80, y*80), new Size(50,50));
+            rect.strokeColor = color5;
+            rect.strokeWidth = 2;
+            rect.scale((x+10+i)/nr);
+            rect.rotate(y*(nr*Math.random() + 3));
+            
+            if (i==0)
+                rect.fillColor = colorGradient[x+y];
+                for(let k = 0; k < 10; k++){
+                    let circ = Path.Circle(new Point(x*80, y*80), new Size(12.5,20));
+                    circ.rotate(Math.random() + 9)
+                    circ.strokeColor =color4;
+                    circ.strokeWidth = 1;
+                    circ.scale((x+1+k)/nr)
+                    
+                    if (k == 0)
+                        circ.fillColor = color3
+                        
+                  
+                }
+                
+        }
+    
+    }
+    
+}
