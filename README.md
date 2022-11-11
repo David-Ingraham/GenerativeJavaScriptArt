@@ -1,1 +1,1 @@
-PaperJs is a sketching website and code editor that processes the JavaScript into graphics
+The sketches are created using the graphics libraries p5.js and paperjs
